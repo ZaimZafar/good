@@ -15,48 +15,7 @@ l.parentNode.insertBefore(s, l);
   </script>
   <meta charset="UTF-8">
   <title>HilltopAds Video Ad</title>
-  <script src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
-  <style>
-    body { background: #111; color: white; text-align: center; }
-    video { width: 80%; max-width: 720px; margin-top: 30px; }
-  </style>
-</head>
-<body>
-  <h2>HilltopAds VAST Test</h2>
-  <video id="video" controls preload="auto" width="640" height="360"></video>
-  <script>
-    const adTagUrl = "https://informalcelebration.com/dvm.FEzzdCGnNDv/Z/GOUz/-e/mo9Mu/ZJUllTkRPoTgYCy/OXTMknw/MrDEkbtANTjgIt5OOzTHAax/MzAW";
 
-    const videoElement = document.getElementById('video');
-    const adDisplayContainer = new google.ima.AdDisplayContainer(videoElement);
-    adDisplayContainer.initialize();
 
-    const adsLoader = new google.ima.AdsLoader(adDisplayContainer);
-    const adsRequest = new google.ima.AdsRequest();
-    adsRequest.adTagUrl = adTagUrl;
-
-    adsRequest.linearAdSlotWidth = videoElement.clientWidth;
-    adsRequest.linearAdSlotHeight = videoElement.clientHeight;
-
-    adsLoader.addEventListener(
-      google.ima.AdsManagerLoadedEvent.Type.ADS_MANAGER_LOADED,
-      function(event) {
-        const adsManager = event.getAdsManager(videoElement);
-        adsManager.init(videoElement.clientWidth, videoElement.clientHeight, google.ima.ViewMode.NORMAL);
-        adsManager.start();
-      },
-      false
-    );
-
-    adsLoader.addEventListener(
-      google.ima.AdErrorEvent.Type.AD_ERROR,
-      function(error) {
-        console.error('Ad error:', error.getError());
-      },
-      false
-    );
-
-    adsLoader.requestAds(adsRequest);
-  </script>
 </body>
 </html>
